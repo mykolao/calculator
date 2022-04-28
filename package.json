@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "name": "ts-template",
+  "description": "typescript project template with parcel and linting",
+  "author": "mykolaoleskiv@gmail.com",
+  "private": "true",
+  "homepage": "https://mykolao-ts-template.vercel.app/",
+  "license": "ISC",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src",
+    "stylelint": "stylelint **/*.scss",
+    "lint-fix": "eslint --fix src",
+    "stylelint-fix": "stylelint --fix **/*.scss",
+    "clean": "rm -rf .parcel-cache dist",
+    "prestart": "yarn clean",
+    "start": "parcel serve src/public/index.html -p 2222 --open chrome",
+    "build": "parcel build src/public/index.html --public-url ."
+  },
+  "alias": {
+    "components": "./src/components",
+    "favicon": "./src/public/favicon",
+    "img": "./src/assets/img"
+  },
+  "dependencies": {
+    "@csstools/normalize.css": "^12.0.0",
+    "workbox-routing": "^6.5.3",
+    "workbox-strategies": "^6.5.3"
+  },
+  "devDependencies": {
+    "@parcel/packager-raw-url": "2.5.0",
+    "@parcel/transformer-sass": "2.5.0",
+    "@parcel/transformer-webmanifest": "2.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "@wemake-services/stylelint-config-scss": "^1.0.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "parcel": "^2.5.0",
+    "prettier": "^2.6.2",
+    "stylelint": "^14.8.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "typescript": "^4.6.3"
+  }
+}

@@ -1,0 +1,11 @@
+$link-color: rgb(255,255,255);
+
+.link {
+  margin-top: 48px;
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
