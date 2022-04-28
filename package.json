@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "name": "ts-template",
-  "description": "typescript project template with parcel and linting",
+  "name": "calculator",
+  "description": "calculator app",
   "author": "mykolaoleskiv@gmail.com",
   "private": "true",
   "homepage": "https://mykolao-ts-template.vercel.app/",

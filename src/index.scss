@@ -14,11 +14,3 @@ body {
   background-color: $bg-color;
   font-family: $font-family;
 }
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
