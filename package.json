@@ -1,37 +1,27 @@
 {
-  "version": "1.0.0",
   "name": "calculator",
-  "description": "calculator app",
-  "author": "mykolaoleskiv@gmail.com",
-  "private": "true",
-  "homepage": "https://mykolao-ts-template.vercel.app/",
-  "license": "ISC",
   "browserslist": "> 0.5%, last 2 versions, not dead",
+  "context": "browser",
+  "source": "./src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src",
     "stylelint": "stylelint **/*.scss",
     "lint-fix": "eslint --fix src",
     "stylelint-fix": "stylelint --fix **/*.scss",
     "clean": "rm -rf .parcel-cache dist",
     "prestart": "yarn clean",
-    "start": "parcel serve src/public/index.html -p 2222 --open chrome",
-    "build": "parcel build src/public/index.html --public-url ."
+    "start": "parcel serve",
+    "build": "parcel build  --public-url ."
   },
   "alias": {
     "components": "./src/components",
-    "favicon": "./src/public/favicon",
-    "img": "./src/assets/img"
+    "styles": "./src/styles"
   },
   "dependencies": {
-    "@csstools/normalize.css": "^12.0.0",
-    "workbox-routing": "^6.5.3",
-    "workbox-strategies": "^6.5.3"
+    "@csstools/normalize.css": "^12.0.0"
   },
   "devDependencies": {
-    "@parcel/packager-raw-url": "2.5.0",
     "@parcel/transformer-sass": "2.5.0",
-    "@parcel/transformer-webmanifest": "2.5.0",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "@wemake-services/stylelint-config-scss": "^1.0.0",

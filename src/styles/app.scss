@@ -1,0 +1,8 @@
+@use 'styles/variables';
+
+.app {
+  overflow: hidden;
+  min-width: variables.$app-width;
+  border-radius: variables.$border-radius;
+  background: variables.$app-bg;
+}
