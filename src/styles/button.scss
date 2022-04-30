@@ -1,13 +1,18 @@
 @use 'styles/variables';
 
+$font-sz: 1.5rem;
+
 .button-active {
   border: 1px solid rgb(255,255,255) !important;
 }
 
 .button {
   border: none;
-  border-radius: calc(variables.$border-radius / 2);
+  border-radius: calc((variables.$border-radius) / 2);
   background: none;
+  outline: none;
+  font-size: $font-sz;
+  user-select: none;
 
   &:hover {
     background: rgba(0,0,255, 0.2);
