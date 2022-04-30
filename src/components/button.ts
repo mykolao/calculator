@@ -1,44 +1,47 @@
-// import 'styles/button.scss';
+import 'styles/button.scss';
 
+const DEFAULT_KEYLIST: string[] = [];
+const DEFAULT_ONCLICK = () => {};
 class Button {
   private readonly buttonElement = document.createElement('button');
 
-  private activateButton() {
-    this.buttonElement.classList.add('button-active');
-  }
+  private onClick;
 
-  private deactivateButton() {
-    this.buttonElement.classList.remove('button-active');
-  }
-
-  private addMouseListeners() {
-    this.buttonElement.addEventListener('mousedown', this.activateButton);
-    this.buttonElement.addEventListener('mouseup', this.deactivateButton);
-  }
-
-  constructor(textContent: string) {
-    // const keyList = ['b', 'B'];
+  constructor(
+    textContent: string,
+    keyList = DEFAULT_KEYLIST,
+    onClick = DEFAULT_ONCLICK
+  ) {
+    this.onClick = onClick;
     this.buttonElement.textContent = textContent;
     this.buttonElement.classList.add('button');
     this.addMouseListeners();
-    // if (keyList.length) {
-    //   this.buttonElement.addEventListener(
-    //     'keydown',
-    //     ({ key }: KeyboardEvent) => {
-    //       console.log(key, 'down');
-    //       if (key in keyList) {
-    //         this.activateButton();
-    //       }
-    //     }
-    //   );
+    if (keyList.length) this.addKeyboardListeners(keyList);
+  }
 
-    //   this.buttonElement.addEventListener('keyup', ({ key }: KeyboardEvent) => {
-    //     console.log(key, 'up');
-    //     if (key in keyList) {
-    //       this.deactivateButton();
-    //     }
-    //   });
-    // }
+  private addMouseListeners() {
+    this.buttonElement.addEventListener('mousedown', () => {
+      this.buttonElement.classList.add('button-active');
+      this.onClick();
+    });
+    this.buttonElement.addEventListener('mouseup', () =>
+      this.buttonElement.classList.remove('button-active')
+    );
+  }
+
+  private addKeyboardListeners(keyList: string[]) {
+    window.addEventListener('keydown', ({ key }: KeyboardEvent) => {
+      if (keyList.includes(key)) {
+        this.buttonElement.classList.add('button-active');
+        this.onClick();
+      }
+    });
+
+    window.addEventListener('keyup', ({ key }: KeyboardEvent) => {
+      if (keyList.includes(key)) {
+        this.buttonElement.classList.remove('button-active');
+      }
+    });
   }
 
   get element() {
